@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  HomeViewController.swift
 //  Asos
 //
 //  Created by Holyfame on 04.11.2021.
@@ -7,19 +7,20 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
-    @IBAction func ButtonDidClick(_ sender: Any) {
-        print("button did click")
-    }
+class HomeViewController: UIViewController {
     
+    private let homeView = HomeView()
+    
+    override func loadView() {
+        view = homeView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
     
-
     /*
     // MARK: - Navigation
 

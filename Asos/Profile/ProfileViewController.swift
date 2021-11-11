@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ProfileViewController.swift
 //  Asos
 //
 //  Created by Holyfame on 04.11.2021.
@@ -7,26 +7,21 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ProfileViewController: UIViewController {
+    
+    private let profileView = ProfileView()
+    
+    override func loadView() {
+        view = profileView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
     
-    @IBAction func ButtonDidClick(_ sender: Any) {
-        UIView.animate(
-            withDuration: 1,
-            delay: .zero,
-            animations: {
-                self.rectangle.backgroundColor = .systemOrange
-            }
-        )
-    }
-    
-    @IBOutlet weak var rectangle: UIView!
-    
+
     /*
     // MARK: - Navigation
 
