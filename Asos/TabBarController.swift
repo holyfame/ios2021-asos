@@ -19,6 +19,7 @@ class TabBarController: UITabBarController {
         self.setViewControllers(
             [
                 homeViewController(),
+                favouritesViewController(),
                 profileViewController()
             ],
             animated: true
@@ -36,6 +37,13 @@ class TabBarController: UITabBarController {
         let controller = ProfileViewController()
         controller.tabBarItem.title = "Profile"
         controller.tabBarItem.image = UIImage(systemName: "person.fill")
+        return controller
+    }
+    
+    private func favouritesViewController() -> UITableViewController {
+        let controller = FavouritesTableViewController()
+        controller.tabBarItem.title = "Favourites"
+        controller.tabBarItem.image = UIImage(systemName: "heart.fill")
         return controller
     }
     
