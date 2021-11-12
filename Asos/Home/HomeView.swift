@@ -9,11 +9,26 @@ import UIKit
 
 class HomeView: UIView {
     
-    private let saleBlock: UIView = {
+    private let saleBlockView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemMint
         return view
     } ()
+    
+    private let twoGirlsImageView: UIImageView = {
+        let image = UIImage(named: "homeTwoGirls")
+        let view = UIImageView(image: image!)
+        return view
+    } ()
+    
+    private let gangImageView: UIImageView = {
+        let image = UIImage(named: "homeGang")
+        let view = UIImageView(image: image!)
+        return view
+    } ()
+
+    
+    private let searchBar: UISearchBar = UISearchBar()
 
     private let headerLabel : UILabel = {
         let label = UILabel()
@@ -23,16 +38,12 @@ class HomeView: UIView {
         return label
     } ()
     
-    private let firstPlanSwitcher: UISwitch = {
-        let switcher = UISwitch()
-        switcher.onTintColor = .systemBlue
-        return switcher
-    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
         addSubviews()
+        setupConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -41,29 +52,44 @@ class HomeView: UIView {
 
     private func addSubviews() {
         [
-            saleBlock,
             headerLabel,
-            firstPlanSwitcher
+            searchBar,
+            saleBlockView,
+            twoGirlsImageView,
+            gangImageView
         ].forEach {
             self.addSubview($0)
         }
-
+        
         self.subviews.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
 
-    override func updateConstraints() {
-        saleBlock.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        saleBlock.topAnchor.constraint(equalTo: self.topAnchor, constant: 200).isActive = true
-
-        headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 150).isActive = true
-        headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+    private func setupConstraints() {
         
-        firstPlanSwitcher.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 100).isActive = true
-        firstPlanSwitcher.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24).isActive = true
-
+        headerLabel.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
+        headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
+        
+        searchBar.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10).isActive = true
+        searchBar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        searchBar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        
+        saleBlockView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20).isActive = true
+        saleBlockView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        saleBlockView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        saleBlockView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        twoGirlsImageView.topAnchor.constraint(equalTo: saleBlockView.bottomAnchor, constant: 20).isActive = true
+        twoGirlsImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        twoGirlsImageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        
+        gangImageView.topAnchor.constraint(equalTo: twoGirlsImageView.bottomAnchor, constant: 20).isActive = true
+        gangImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        gangImageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        
         super.updateConstraints()
+
     }
 
     /*

@@ -13,6 +13,9 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.tabBar.backgroundColor = .white
+        self.tabBar.isTranslucent = false
+        
         self.setViewControllers(
             [
                 homeViewController(),
