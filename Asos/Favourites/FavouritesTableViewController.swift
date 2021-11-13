@@ -9,9 +9,50 @@ import UIKit
 
 class FavouritesTableViewController: UITableViewController {
 
+    var cellsDada : [FavouritesCellDataModel] = [FavouritesCellDataModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        cellsDada.append(FavouritesCellDataModel(
+            imageName: "Taggart",
+            price: "1 004 руб.",
+            description: "Футболка белая с принтом"
+        ))
+        
+        cellsDada.append(FavouritesCellDataModel(
+            imageName: "Rearden",
+            price: "1 310 руб.",
+            description: "Футболка мужская"
+        ))
+        cellsDada.append(FavouritesCellDataModel(
+            imageName: "DAnconia",
+            price: "1 146 руб.",
+            description: "Футболка hot"
+        ))
+        
+        cellsDada.append(FavouritesCellDataModel(
+            imageName: "Danneskjold",
+            price: "1 239 руб.",
+            description: "Футболка пиратская"
+        ))
+        cellsDada.append(FavouritesCellDataModel(
+            imageName: "Fountainhead",
+            price: "1 009 руб.",
+            description: "Футболка вдохновляющая"
+        ))
+        
+        cellsDada.append(FavouritesCellDataModel(
+            imageName: "Wyatt",
+            price: "1 146 руб.",
+            description: "Серая футболка"
+        ))
+        
+        cellsDada.append(FavouritesCellDataModel(
+            imageName: "Roark",
+            price: "1 146 руб.",
+            description: "Футболка архитектурная"
+        ))
+    
     }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,34 +61,19 @@ class FavouritesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     
 
-    // MARK: - Table view data source
+    // MARk: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return cellsDada.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! FavouritesTableViewCell
-
-        switch indexPath.row {
-        case 1:
-            cell.update(dataModel: FavouritesCellDataModel(
-                imageName: "lilacShirt",
-                description: "Сиреневая рубашка"
-            ))
-        case 2:
-            cell.update(dataModel: FavouritesCellDataModel(
-                imageName: "monkiBlouse",
-                description: "Блузка в крапинку с пуговицами"
-            ))
-        default:
-            return cell
-        }
+        
+        cell.update(dataModel: cellsDada[indexPath.row])
 
         return cell
     }

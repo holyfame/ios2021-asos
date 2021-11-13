@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		958C688D274008D300B3ACA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C688C274008D300B3ACA3 /* ViewController.swift */; };
 		95BDCC6B273DA4C3001784E3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCC6A273DA4C3001784E3 /* HomeView.swift */; };
 		95BDCC6F273DA797001784E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCC6E273DA797001784E3 /* ProfileView.swift */; };
 		95D7DD03273D9F8F00C3D536 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7DD02273D9F8F00C3D536 /* TabBarController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		958C688C274008D300B3ACA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95BDCC6A273DA4C3001784E3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		95BDCC6E273DA797001784E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		95D7DD02273D9F8F00C3D536 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		958C688B2740084E00B3ACA3 /* FavouritesTryAgain */ = {
+			isa = PBXGroup;
+			children = (
+				958C688C274008D300B3ACA3 /* ViewController.swift */,
+			);
+			path = FavouritesTryAgain;
+			sourceTree = "<group>";
+		};
 		95BDCC6C273DA4CC001784E3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		95F016612733D89D0026A6CC /* Asos */ = {
 			isa = PBXGroup;
 			children = (
+				958C688B2740084E00B3ACA3 /* FavouritesTryAgain */,
 				95D82F15273ECC5800A92AA6 /* Favourites */,
 				95BDCC6D273DA77B001784E3 /* Profile */,
 				95BDCC6C273DA4CC001784E3 /* Home */,
@@ -300,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				958C688D274008D300B3ACA3 /* ViewController.swift in Sources */,
 				95F016932733E4740026A6CC /* ProfileViewController.swift in Sources */,
 				95D82F1C273F082200A92AA6 /* FavouritesTableViewCell.swift in Sources */,
 				95F016632733D89E0026A6CC /* AppDelegate.swift in Sources */,
