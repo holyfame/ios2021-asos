@@ -36,9 +36,15 @@ class FavouritesTableViewController: UITableViewController {
 
         switch indexPath.row {
         case 1:
-            cell.update(imageName: "homeGang")
+            cell.update(dataModel: FavouritesCellDataModel(
+                imageName: "lilacShirt",
+                description: "Сиреневая рубашка"
+            ))
         case 2:
-            cell.update(imageName: "homeTwoGirls")
+            cell.update(dataModel: FavouritesCellDataModel(
+                imageName: "monkiBlouse",
+                description: "Блузка в крапинку с пуговицами"
+            ))
         default:
             return cell
         }

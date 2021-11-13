@@ -10,9 +10,15 @@ import UIKit
 class HomeView: UIView {
     
     private let scrollView: UIScrollView = {
-        let view = UIScrollView()
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.isScrollEnabled = true
+        return scrollView
+    } ()
+    
+    private let contentView: UIView = {
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.isScrollEnabled = true
         return view
     } ()
     
@@ -40,7 +46,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 32)
-        label.text = "Today's plans"
+        label.text = "Welcome to asos"
         return label
     } ()
     
@@ -48,7 +54,6 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        
         addSubviews()
         setupConstraints()
     }
@@ -59,54 +64,67 @@ class HomeView: UIView {
 
     private func addSubviews() {
         self.addSubview(scrollView)
-        addSubviewsToScrollView()
+        scrollView.addSubview(contentView)
+//        addSubviewsToContainerView()
     }
     
-    private func addSubviewsToScrollView() {
+    private func addSubviewsToContainerView() {
         [
-            headerLabel,
-            searchBar,
-            saleBlockView,
-            twoGirlsImageView,
-            gangImageView
+//            headerLabel,
+//            searchBar,
+//            saleBlockView,
+//            twoGirlsImageView,
+//            gangImageView
         ].forEach {
-            scrollView.addSubview($0)
+            contentView.addSubview($0)
         }
         
-        scrollView.subviews.forEach {
+        contentView.subviews.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
 
     private func setupConstraints() {
         
-        scrollView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        scrollView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 1000).isActive = true
+        scrollView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        
+//        scrollView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+//        scrollView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+//        scrollView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//
+//        contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
+//        contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
+//        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+//        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
 
-        headerLabel.topAnchor.constraint(equalTo: scrollView.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
-        headerLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
+//        headerLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
+//        headerLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+//
+//        searchBar.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10).isActive = true
+//        searchBar.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+//        searchBar.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20).isActive = true
+//
+//        saleBlockView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20).isActive = true
+//        saleBlockView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+//        saleBlockView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20).isActive = true
+//        saleBlockView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        searchBar.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10).isActive = true
-        searchBar.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 20).isActive = true
-        searchBar.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -20).isActive = true
-        
-        
-        saleBlockView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20).isActive = true
-        saleBlockView.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 20).isActive = true
-        saleBlockView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -20).isActive = true
-        saleBlockView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        
-        twoGirlsImageView.topAnchor.constraint(equalTo: saleBlockView.bottomAnchor, constant: 20).isActive = true
-        twoGirlsImageView.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 20).isActive = true
-        twoGirlsImageView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -20).isActive = true
-        
-        
-        gangImageView.topAnchor.constraint(equalTo: twoGirlsImageView.bottomAnchor, constant: 20).isActive = true
-        gangImageView.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 20).isActive = true
-        gangImageView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -20).isActive = true
+//        twoGirlsImageView.topAnchor.constraint(equalTo: saleBlockView.bottomAnchor, constant: 20).isActive = true
+//        twoGirlsImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+//        twoGirlsImageView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20).isActive = true
+//
+//        gangImageView.topAnchor.constraint(equalTo: twoGirlsImageView.bottomAnchor, constant: 20).isActive = true
+//        gangImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+//        gangImageView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20).isActive = true
         
         super.updateConstraints()
 

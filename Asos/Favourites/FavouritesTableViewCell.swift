@@ -7,15 +7,20 @@
 
 import UIKit
 
+struct FavouritesCellDataModel {
+    let imageName: String
+    let price: Int = 1000
+    let description: String
+}
+
 class FavouritesTableViewCell: UITableViewCell {
     
-    private let posterImage: UIImageView = UIImageView()
+    private let posterImageView: UIImageView = UIImageView()
     
-    private let titleLabel : UILabel = {
+    private let descriptionLabel : UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.text = "Стильная шмотка"
         return label
     } ()
     
@@ -31,25 +36,25 @@ class FavouritesTableViewCell: UITableViewCell {
     }
     
     private func addSubviews() {
-        contentView.addSubview(posterImage)
-        contentView.addSubview(titleLabel)
+        contentView.addSubview(posterImageView)
+        contentView.addSubview(descriptionLabel)
         self.contentView.subviews.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
-    func update(imageName: String) {
-        let image = UIImage(named: imageName)
-        posterImage.image = image
+    func update(dataModel: FavouritesCellDataModel) {
+        posterImageView.image = UIImage(named: dataModel.imageName)
+        descriptionLabel.text = dataModel.description
     }
     
     func setupConstraints() {
         
-        posterImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 24).isActive = true
-        posterImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24).isActive = true
-        posterImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24).isActive = true
+        posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24).isActive = true
+        posterImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 24).isActive = true
+//        posterImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24).isActive = true
         
-        titleLabel.topAnchor.constraint(equalTo: posterImage.bottomAnchor, constant: 24).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 24).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24).isActive = true
+        descriptionLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: 24).isActive = true
+        descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -24).isActive = true
 
         super.updateConstraints()
     }
