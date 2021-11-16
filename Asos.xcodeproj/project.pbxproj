@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		958C688D274008D300B3ACA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C688C274008D300B3ACA3 /* ViewController.swift */; };
-		95BDCC6B273DA4C3001784E3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCC6A273DA4C3001784E3 /* HomeView.swift */; };
+		95BDCC6B273DA4C3001784E3 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCC6A273DA4C3001784E3 /* HomeContentView.swift */; };
 		95BDCC6F273DA797001784E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCC6E273DA797001784E3 /* ProfileView.swift */; };
 		95D7DD03273D9F8F00C3D536 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7DD02273D9F8F00C3D536 /* TabBarController.swift */; };
 		95D82F17273ECCFB00A92AA6 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D82F16273ECCFB00A92AA6 /* FavouritesTableViewController.swift */; };
@@ -44,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		958C688C274008D300B3ACA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95BDCC6A273DA4C3001784E3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		95BDCC6A273DA4C3001784E3 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
 		95BDCC6E273DA797001784E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		95D7DD02273D9F8F00C3D536 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		95D82F16273ECCFB00A92AA6 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				95F016942733F22D0026A6CC /* HomeViewController.swift */,
-				95BDCC6A273DA4C3001784E3 /* HomeView.swift */,
+				95BDCC6A273DA4C3001784E3 /* HomeContentView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 				95D82F1C273F082200A92AA6 /* FavouritesTableViewCell.swift in Sources */,
 				95F016632733D89E0026A6CC /* AppDelegate.swift in Sources */,
 				95F016652733D89E0026A6CC /* SceneDelegate.swift in Sources */,
-				95BDCC6B273DA4C3001784E3 /* HomeView.swift in Sources */,
+				95BDCC6B273DA4C3001784E3 /* HomeContentView.swift in Sources */,
 				95D7DD03273D9F8F00C3D536 /* TabBarController.swift in Sources */,
 				95D82F17273ECCFB00A92AA6 /* FavouritesTableViewController.swift in Sources */,
 				95BDCC6F273DA797001784E3 /* ProfileView.swift in Sources */,
