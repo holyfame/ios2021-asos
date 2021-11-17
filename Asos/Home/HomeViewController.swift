@@ -7,46 +7,63 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UISearchBarDelegate {
     
-    // MARK: - views
+    // MARK: - Properties
     
-    lazy var headerLabel : UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 32)
-        label.text = "Welcome to asos"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "search"
+        searchBar.delegate = self
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        return searchBar
     } ()
 
-    lazy var scrollView : UIScrollView = {
-        let scrollViewFrame = CGRect(x: 0, y: 100, width: view.bounds.width, height: view.bounds.height)
+    private lazy var scrollView : UIScrollView = {
+        let scrollViewFrame = CGRect(x: 0, y: CONTENT_VIEW_HEIGHT, width: view.bounds.width, height: view.bounds.height)
         let scrollView = UIScrollView(frame: scrollViewFrame)
         scrollView.backgroundColor = .white
+        scrollView.keyboardDismissMode = .onDrag
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 400)
         return scrollView
     } ()
     
-    lazy var contentView : UIView = HomeContentView(frame: view.bounds)
+    private lazy var contentView : UIView = HomeContentView(frame: view.bounds)
     
-    // MARK: - load
+    // MARK: - Load view
     
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .white
-        
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
         
-        view.addSubview(headerLabel)
-        headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
+        view.backgroundColor = .white
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        view.addSubview(searchBar)
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
+            searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10)
+        ])
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.endEditing(true)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.tabBarController?.selectedIndex = 1
     }
     
     /*

@@ -9,34 +9,32 @@ import UIKit
 
 class HomeContentView: UIView {
     
-    // MARK: - content
+    // MARK: - Properties
     
-    private let searchBar: UISearchBar = UISearchBar()
-    
-    private let saleBlockView: UIView = {
+    private lazy var saleBlockView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemMint
         return view
     } ()
     
-    private let twoGirlsImageView: UIImageView = {
+    private lazy var twoGirlsImageView: UIImageView = {
         let image = UIImage(named: "homeTwoGirls")
         let view = UIImageView(image: image!)
         return view
     } ()
     
-    private let gangImageView: UIImageView = {
+    private lazy var gangImageView: UIImageView = {
         let image = UIImage(named: "homeGang")
         let view = UIImageView(image: image!)
         return view
     } ()
     
-    // MARK: - init
+    // MARK: - Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-//        self.frame.size = CGSize(width: frame.size.width, height: frame.size.height)
+//        self.frame.size = CGSize(width: frame.size.width, height: frame.size.height + 400)
         
         addSubviews()
         setupConstraints()
@@ -49,7 +47,6 @@ class HomeContentView: UIView {
     
     private func addSubviews() {
         [
-            searchBar,
             saleBlockView,
             twoGirlsImageView,
             gangImageView
@@ -63,13 +60,8 @@ class HomeContentView: UIView {
     }
     
     private func setupConstraints() {
-    
-        let constraints = [
-            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
-            searchBar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-            searchBar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30),
-            
-            saleBlockView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20),
+        NSLayoutConstraint.activate([
+            saleBlockView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             saleBlockView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
             saleBlockView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             saleBlockView.heightAnchor.constraint(equalToConstant: 100),
@@ -81,9 +73,7 @@ class HomeContentView: UIView {
             gangImageView.topAnchor.constraint(equalTo: twoGirlsImageView.bottomAnchor, constant: 20),
             gangImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
             gangImageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)
-        ]
-        
-        NSLayoutConstraint.activate(constraints)
+        ])
     }
 
     /*
