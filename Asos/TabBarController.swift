@@ -22,6 +22,7 @@ class TabBarController: UITabBarController {
         self.setViewControllers(
             [
                 homeViewController(),
+                searchViewController(),
                 favouritesViewController(),
                 profileViewController()
             ],
@@ -33,6 +34,13 @@ class TabBarController: UITabBarController {
         let controller = HomeViewController()
         controller.tabBarItem.title = "Home"
         controller.tabBarItem.image = UIImage(systemName: "house.fill")
+        return controller
+    }
+    
+    private func searchViewController() -> UICollectionViewController {
+        let controller = SearchCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        controller.tabBarItem.title = "Search"
+        controller.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle.fill")
         return controller
     }
     

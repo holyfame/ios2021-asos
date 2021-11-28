@@ -13,6 +13,8 @@
 		95D7DD03273D9F8F00C3D536 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7DD02273D9F8F00C3D536 /* TabBarController.swift */; };
 		95D82F17273ECCFB00A92AA6 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D82F16273ECCFB00A92AA6 /* FavouritesTableViewController.swift */; };
 		95D82F1C273F082200A92AA6 /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D82F1B273F082200A92AA6 /* FavouritesTableViewCell.swift */; };
+		95EAB61F27540F8700E3ABF9 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EAB61E27540F8700E3ABF9 /* SearchCollectionViewController.swift */; };
+		95EAB6212754167E00E3ABF9 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EAB6202754167E00E3ABF9 /* SearchCollectionViewCell.swift */; };
 		95F016632733D89E0026A6CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F016622733D89E0026A6CC /* AppDelegate.swift */; };
 		95F016652733D89E0026A6CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F016642733D89E0026A6CC /* SceneDelegate.swift */; };
 		95F0166A2733D89E0026A6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F016682733D89E0026A6CC /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		95D7DD02273D9F8F00C3D536 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		95D82F16273ECCFB00A92AA6 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
 		95D82F1B273F082200A92AA6 /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
+		95EAB61E27540F8700E3ABF9 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		95EAB6202754167E00E3ABF9 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		95F0165F2733D89D0026A6CC /* Asos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F016622733D89E0026A6CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F016642733D89E0026A6CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 			path = Favourites;
 			sourceTree = "<group>";
 		};
+		95EAB61D27540E0000E3ABF9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				95EAB61E27540F8700E3ABF9 /* SearchCollectionViewController.swift */,
+				95EAB6202754167E00E3ABF9 /* SearchCollectionViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		95F016562733D89D0026A6CC = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 		95F016612733D89D0026A6CC /* Asos */ = {
 			isa = PBXGroup;
 			children = (
+				95EAB61D27540E0000E3ABF9 /* Search */,
 				95BC4E792744F8B3007FD9F4 /* Commons.swift */,
 				95D82F15273ECC5800A92AA6 /* Favourites */,
 				95BDCC6D273DA77B001784E3 /* Profile */,
@@ -303,7 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95EAB61F27540F8700E3ABF9 /* SearchCollectionViewController.swift in Sources */,
 				95F016932733E4740026A6CC /* ProfileViewController.swift in Sources */,
+				95EAB6212754167E00E3ABF9 /* SearchCollectionViewCell.swift in Sources */,
 				95D82F1C273F082200A92AA6 /* FavouritesTableViewCell.swift in Sources */,
 				95F016632733D89E0026A6CC /* AppDelegate.swift in Sources */,
 				95F016652733D89E0026A6CC /* SceneDelegate.swift in Sources */,
