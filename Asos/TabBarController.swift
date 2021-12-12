@@ -23,6 +23,7 @@ class TabBarController: UITabBarController {
             [
                 homeViewController(),
                 searchViewController(),
+                basketViewController(),
                 favouritesViewController(),
                 profileViewController()
             ],
@@ -41,6 +42,13 @@ class TabBarController: UITabBarController {
         let controller = SearchCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         controller.tabBarItem.title = "Search"
         controller.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle.fill")
+        return controller
+    }
+    
+    private func basketViewController() -> UIViewController {
+        let controller = BasketViewController()
+        controller.tabBarItem.title = "Basket"
+        controller.tabBarItem.image = UIImage(systemName: "bag.fill")
         return controller
     }
     

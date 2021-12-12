@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95024EE527667E1100B0A891 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95024EE427667E1100B0A891 /* BasketViewController.swift */; };
+		95024EE7276681B200B0A891 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95024EE6276681B200B0A891 /* BasketView.swift */; };
 		95BC4E7A2744F8B3007FD9F4 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC4E792744F8B3007FD9F4 /* Commons.swift */; };
 		95BDCC6B273DA4C3001784E3 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCC6A273DA4C3001784E3 /* HomeContentView.swift */; };
 		95BDCC6F273DA797001784E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCC6E273DA797001784E3 /* ProfileView.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95024EE427667E1100B0A891 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		95024EE6276681B200B0A891 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		95BC4E792744F8B3007FD9F4 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		95BDCC6A273DA4C3001784E3 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
 		95BDCC6E273DA797001784E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95024EE327667D9900B0A891 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				95024EE427667E1100B0A891 /* BasketViewController.swift */,
+				95024EE6276681B200B0A891 /* BasketView.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
 		95BDCC6C273DA4CC001784E3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +166,7 @@
 		95F016612733D89D0026A6CC /* Asos */ = {
 			isa = PBXGroup;
 			children = (
+				95024EE327667D9900B0A891 /* Basket */,
 				95EAB61D27540E0000E3ABF9 /* Search */,
 				95BC4E792744F8B3007FD9F4 /* Commons.swift */,
 				95D82F15273ECC5800A92AA6 /* Favourites */,
@@ -319,6 +333,7 @@
 			files = (
 				95EAB61F27540F8700E3ABF9 /* SearchCollectionViewController.swift in Sources */,
 				95F016932733E4740026A6CC /* ProfileViewController.swift in Sources */,
+				95024EE527667E1100B0A891 /* BasketViewController.swift in Sources */,
 				95EAB6212754167E00E3ABF9 /* SearchCollectionViewCell.swift in Sources */,
 				95D82F1C273F082200A92AA6 /* FavouritesTableViewCell.swift in Sources */,
 				95F016632733D89E0026A6CC /* AppDelegate.swift in Sources */,
@@ -328,6 +343,7 @@
 				95D82F17273ECCFB00A92AA6 /* FavouritesTableViewController.swift in Sources */,
 				95BDCC6F273DA797001784E3 /* ProfileView.swift in Sources */,
 				95BC4E7A2744F8B3007FD9F4 /* Commons.swift in Sources */,
+				95024EE7276681B200B0A891 /* BasketView.swift in Sources */,
 				95F016952733F22D0026A6CC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

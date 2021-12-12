@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="300" id="V1F-i1-H00"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="magnifyingglass.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JgA-Nz-bk5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JgA-Nz-bk5">
                                 <rect key="frame" x="20" y="182" width="128" height="576"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="576" id="Gh1-z7-bn6"/>
@@ -159,9 +159,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bag.fill" catalog="system" width="128" height="128"/>
         <image name="homeTwoGirls" width="326" height="480"/>
         <image name="lilacShirt" width="150" height="192"/>
-        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
