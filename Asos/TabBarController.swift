@@ -53,7 +53,7 @@ class TabBarController: UITabBarController {
     }
     
     private func profileViewController() -> UIViewController {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") ?? ProfileViewController()
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") ?? UIViewController()
 //        let controller = ProfileViewController()
         controller.tabBarItem.title = "Profile"
         controller.tabBarItem.image = UIImage(systemName: "person.fill")
