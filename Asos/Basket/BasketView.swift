@@ -11,6 +11,19 @@ class BasketView: UIView {
     
     weak var delegate: BasketButtonListening?
     
+    // Screen name
+    private let screenName : UILabel = {
+        let buttonX = 40
+        let buttonY = 30
+        let buttonWidth = 300
+        let buttonHeight = 80
+        let label = UILabel(frame: CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight))
+            label.textAlignment = .center
+            label.text = "КОРЗИНА"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    } ()
+    
     // Text Caps
     private let capsText : UILabel = {
         let buttonX = 40
@@ -81,12 +94,25 @@ class BasketView: UIView {
         
         favButton.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
-        
+        //self.addSubview(navigationBar())//        self.addSubview(screenName)
         self.addSubview(capsText)
         self.addSubview(emptyText)
         self.addSubview(favButton)
         self.addSubview(searchButton)
+        
     }
+    func navigationBar() -> UIView {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
+        let navItem = UINavigationItem(title: "ahahhahaha")
+        navBar.setItems([navItem], animated: false)
+        return navBar
+    }
+
+    @objc func done() { // remove @objc for Swift 3
+
+    }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -11,29 +11,31 @@ private let reuseIdentifier = "Cell"
 
 class SearchCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private var cellsDada : [SearchCellDataModel] = [SearchCellDataModel]()
+    private var cellData : [SearchCellDataModel] = [SearchCellDataModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cellsDada.append(SearchCellDataModel(
+        cellData.append(SearchCellDataModel(
             imageName: "Taggart"
         ))
         
-        cellsDada.append(SearchCellDataModel(
+        cellData.append(SearchCellDataModel(
             imageName: "Rearden"
         ))
-        cellsDada.append(SearchCellDataModel(
+        cellData.append(SearchCellDataModel(
             imageName: "DAnconia"
         ))
         
-        cellsDada.append(SearchCellDataModel(
+        cellData.append(SearchCellDataModel(
             imageName: "Danneskjold"
         ))
         
         self.collectionView.backgroundColor = .white
         self.collectionView.delegate = self
         self.collectionView.alwaysBounceVertical = true
+        
+        self.🗺()
         
         self.collectionView!.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     
@@ -56,20 +58,32 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SearchCollectionViewCell
         let cellIndex = indexPath.row * indexPath.count + indexPath.section
-        cell.update(dataModel: cellsDada[cellIndex])
+        cell.update(dataModel: cellData[cellIndex])
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         20
     }
     
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 100, height: 180)
     }
-
+    
+    func 🗺() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 40, width: screenSize.width, height: 0))
+        let navItem = UINavigationItem(title: "ПОИСК")
+        navBar.setItems([navItem], animated: false)
+        navBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        navBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        navBar.barTintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        self.view.addSubview(navBar)
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

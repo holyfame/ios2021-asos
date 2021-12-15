@@ -164,9 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				958184142767391400125C4B /* Profile */,
-				95024EE327667D9900B0A891 /* Basket */,
 				95EAB61D27540E0000E3ABF9 /* Search */,
 				95BC4E792744F8B3007FD9F4 /* Commons.swift */,
+				95024EE327667D9900B0A891 /* Basket */,
 				95D82F15273ECC5800A92AA6 /* Favourites */,
 				95BDCC6C273DA4CC001784E3 /* Home */,
 				95F016622733D89E0026A6CC /* AppDelegate.swift */,

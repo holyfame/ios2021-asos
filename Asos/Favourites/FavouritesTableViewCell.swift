@@ -10,6 +10,8 @@ import UIKit
 
 class FavouritesTableViewCell: UITableViewCell {
     
+    private var dataModel = ClothesDataModel(imageName: "", price: "", description: "")
+    private var isBuyable: Bool = true
     private let posterImageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
@@ -43,18 +45,12 @@ class FavouritesTableViewCell: UITableViewCell {
         btn.layer.cornerRadius = 0
         btn.layer.borderColor = CGColor(red: 0.06, green: 0.5, blue: 0.1, alpha: 0.8)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        
-//        button.addTarget(self, action: #selector(incrementAction), for: .touchUpInside)
         btn.addTarget(self, action: #selector(buyButtonTap), for: .touchUpInside)
         return btn
     } ()
     
     @objc private func buyButtonTap() {
-        GlobalVariables.basketCellsData.append((ClothesDataModel(
-            imageName: "Taggart",
-            price: "1 004 руб.",
-            description: "Футболка белая с принтом"
-        )))
+        GlobalVariables.basketCellsData.append(self.dataModel)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -77,37 +73,43 @@ class FavouritesTableViewCell: UITableViewCell {
         self.contentView.subviews.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
-    func update(dataModel: ClothesDataModel) {
+    
+    
+    func update(dataModel: ClothesDataModel, _ canBuy: Bool) {
+        self.dataModel = dataModel
         posterImageView.image = UIImage(named: dataModel.imageName)
         priceLabel.text = dataModel.price
         descriptionLabel.text = dataModel.description
+        isBuyable = canBuy
+        buyButton.isEnabled = canBuy
+        buyButton.isHidden = !canBuy
     }
     
-    let myConstant: CGFloat = 20
+    let myCumstant: CGFloat = 20
     func setupConstraints() {
         //self.heightAnchor.constraint(equalToConstant: 200).isActive = true
         contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         posterImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         posterImageView.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        posterImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: myConstant).isActive = true
-        posterImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: myConstant).isActive = true
+        posterImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: myCumstant).isActive = true
+        posterImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: myCumstant).isActive = true
 //        posterImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myConstant).isActive = true
         //posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: myConstant0).isActive = true
         
-        priceLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: myConstant).isActive = true
-        priceLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myConstant).isActive = true
+        priceLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: myCumstant).isActive = true
+        priceLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myCumstant).isActive = true
         
-        descriptionLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: myConstant).isActive = true
-        descriptionLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myConstant).isActive = true
-        descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myConstant).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: buyButton.topAnchor, constant: -myConstant).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: myCumstant).isActive = true
+        descriptionLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myCumstant).isActive = true
+        descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myCumstant).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: buyButton.topAnchor, constant: -myCumstant).isActive = true
         //descriptionLabel.heightAnchor.constraint(equalToConstant: 3*myConstant).isActive = true
         
         //buyButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: myConstant).isActive = true
-        buyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -myConstant).isActive = true
-        buyButton.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myConstant).isActive = true
-        buyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myConstant).isActive = true
+        buyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -myCumstant).isActive = true
+        buyButton.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myCumstant).isActive = true
+        buyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myCumstant).isActive = true
         //buyButton.widthAnchor.constraint(equalToConstant: 12).isActive = true
         //buyButton.heightAnchor.constraint(equalToConstant: 160).isActive = true
        
