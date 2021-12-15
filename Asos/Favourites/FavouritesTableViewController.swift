@@ -9,45 +9,61 @@ import UIKit
 
 class FavouritesTableViewController: UITableViewController {
 
-    var cellsDada : [FavouritesCellDataModel] = [FavouritesCellDataModel]()
+    var cellsDada : [ClothesDataModel] = [ClothesDataModel]()
+    
+//    private let emptyView = UIView()
+//    private let condition = true
+//
+//    override func loadView() {
+//        if (condition) {
+//            view = emptyView
+//            view.backgroundColor = .white
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        if (condition) {
+//            return
+//        }
+
+        
         tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        cellsDada.append(FavouritesCellDataModel(
+        cellsDada.append(ClothesDataModel(
             imageName: "Taggart",
             price: "1 004 руб.",
             description: "Футболка белая с принтом"
         ))
         
-        cellsDada.append(FavouritesCellDataModel(
+        cellsDada.append(ClothesDataModel(
             imageName: "Rearden",
             price: "1 310 руб.",
             description: "Футболка мужская"
         ))
-        cellsDada.append(FavouritesCellDataModel(
+        cellsDada.append(ClothesDataModel(
             imageName: "DAnconia",
             price: "1 146 руб.",
             description: "Футболка hot"
         ))
         
-        cellsDada.append(FavouritesCellDataModel(
+        cellsDada.append(ClothesDataModel(
             imageName: "Danneskjold",
             price: "1 239 руб.",
             description: "Футболка пиратская"
         ))
-        cellsDada.append(FavouritesCellDataModel(
+        cellsDada.append(ClothesDataModel(
             imageName: "Fountainhead",
             price: "1 009 руб.",
             description: "Футболка вдохновляющая"
         ))
         
-        cellsDada.append(FavouritesCellDataModel(
+        cellsDada.append(ClothesDataModel(
             imageName: "Wyatt",
             price: "1 146 руб.",
             description: "Серая футболка"
         ))
         
-        cellsDada.append(FavouritesCellDataModel(
+        cellsDada.append(ClothesDataModel(
             imageName: "Roark",
             price: "1 146 руб.",
             description: "Футболка архитектурная"

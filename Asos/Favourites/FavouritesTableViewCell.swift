@@ -8,12 +8,6 @@
 import UIKit
 
 
-struct FavouritesCellDataModel {
-    let imageName: String
-    let price: String 
-    let description: String
-}
-
 class FavouritesTableViewCell: UITableViewCell {
     
     private let posterImageView: UIImageView = {
@@ -39,7 +33,7 @@ class FavouritesTableViewCell: UITableViewCell {
     } ()
     
     private let buyButton : UIButton = {
-        let btn = UIButton()
+        let btn = UIButton(type: .system)
         btn.setTitle("В КОРЗИНУ", for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.setTitleShadowColor(.black, for: .normal)
@@ -49,11 +43,23 @@ class FavouritesTableViewCell: UITableViewCell {
         btn.layer.cornerRadius = 0
         btn.layer.borderColor = CGColor(red: 0.06, green: 0.5, blue: 0.1, alpha: 0.8)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+//        button.addTarget(self, action: #selector(incrementAction), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(buyButtonTap), for: .touchUpInside)
         return btn
     } ()
     
+    @objc private func buyButtonTap() {
+        GlobalVariables.basketCellsData.append((ClothesDataModel(
+            imageName: "Taggart",
+            price: "1 004 руб.",
+            description: "Футболка белая с принтом"
+        )))
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.isUserInteractionEnabled = true
         addSubviews()
         setupConstraints()
         selectionStyle = .none
@@ -71,11 +77,12 @@ class FavouritesTableViewCell: UITableViewCell {
         self.contentView.subviews.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
-    func update(dataModel: FavouritesCellDataModel) {
+    func update(dataModel: ClothesDataModel) {
         posterImageView.image = UIImage(named: dataModel.imageName)
         priceLabel.text = dataModel.price
         descriptionLabel.text = dataModel.description
     }
+    
     let myConstant: CGFloat = 20
     func setupConstraints() {
         //self.heightAnchor.constraint(equalToConstant: 200).isActive = true
