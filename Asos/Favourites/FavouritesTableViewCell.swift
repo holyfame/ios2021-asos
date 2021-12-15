@@ -10,6 +10,8 @@ import UIKit
 
 class FavouritesTableViewCell: UITableViewCell {
     
+    private var dataModel = ClothesDataModel(imageName: "", price: "", description: "")
+    
     private let posterImageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
@@ -43,18 +45,12 @@ class FavouritesTableViewCell: UITableViewCell {
         btn.layer.cornerRadius = 0
         btn.layer.borderColor = CGColor(red: 0.06, green: 0.5, blue: 0.1, alpha: 0.8)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        
-//        button.addTarget(self, action: #selector(incrementAction), for: .touchUpInside)
         btn.addTarget(self, action: #selector(buyButtonTap), for: .touchUpInside)
         return btn
     } ()
     
     @objc private func buyButtonTap() {
-        GlobalVariables.basketCellsData.append((ClothesDataModel(
-            imageName: "Taggart",
-            price: "1 004 руб.",
-            description: "Футболка белая с принтом"
-        )))
+        GlobalVariables.basketCellsData.append(self.dataModel)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -78,6 +74,7 @@ class FavouritesTableViewCell: UITableViewCell {
     }
     
     func update(dataModel: ClothesDataModel) {
+        self.dataModel = dataModel
         posterImageView.image = UIImage(named: dataModel.imageName)
         priceLabel.text = dataModel.price
         descriptionLabel.text = dataModel.description

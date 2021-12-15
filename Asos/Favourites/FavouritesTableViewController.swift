@@ -10,23 +10,9 @@ import UIKit
 class FavouritesTableViewController: UITableViewController {
 
     var cellsDada : [ClothesDataModel] = [ClothesDataModel]()
-    
-//    private let emptyView = UIView()
-//    private let condition = true
-//
-//    override func loadView() {
-//        if (condition) {
-//            view = emptyView
-//            view.backgroundColor = .white
-//        }
-//    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if (condition) {
-//            return
-//        }
-
         
         tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         cellsDada.append(ClothesDataModel(
