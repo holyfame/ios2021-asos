@@ -89,7 +89,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Jm-Gj-ME5">
                                                 <rect key="frame" x="5" y="358" width="404" height="80"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square.fill.and.at.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nHH-NO-kIO">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nHH-NO-kIO">
                                                         <rect key="frame" x="10" y="11" width="50" height="57.5"/>
                                                         <color key="tintColor" systemColor="labelColor"/>
                                                         <constraints>
@@ -249,7 +249,7 @@
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="creditcard.and.123" catalog="system" width="128" height="90"/>
-        <image name="person.crop.square.fill.and.at.rectangle" catalog="system" width="128" height="93"/>
+        <image name="person.crop.rectangle" catalog="system" width="128" height="93"/>
         <image name="profileHeaderPixelart" width="1148" height="424"/>
         <image name="shippingbox" catalog="system" width="128" height="124"/>
         <systemColor name="labelColor">
