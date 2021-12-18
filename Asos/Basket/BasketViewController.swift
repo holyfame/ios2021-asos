@@ -12,11 +12,13 @@ protocol BasketButtonListening: AnyObject {
     func favButtonDidTap()
 }
 
-class BasketViewController: UITableViewController, BasketButtonListening {
+class BasketViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,BasketButtonListening {
     
     private var basketView = BasketView()
     
     private var cellsDada : [ClothesDataModel] = [ClothesDataModel]()
+    
+    private var tableView: UITableView!
     
     override func loadView() {
         super.loadView()
@@ -27,12 +29,27 @@ class BasketViewController: UITableViewController, BasketButtonListening {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView = UITableView(frame: CGRect(x: 0, y: 84, width: view.bounds.width, height: view.bounds.height))
+        tableView.dataSource = self
+        tableView.delegate = self
         if (cellsDada.isEmpty) {
-            return
+            //return
         }
-        
         tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+    }
+    
+    func setNavigationBar() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 40, width: screenSize.width, height: 0))
+        let navItem = UINavigationItem(title: "КОРЗИНА")
+        navBar.backgroundColor = .white
+        navBar.tintColor = .white
+        navBar.setItems([navItem], animated: false)
+        self.view.addSubview(navBar)
+    }
+
+    @objc func done() { // remove @objc for Swift 3
+
     }
     
     @objc private func clearButtonTap() {
@@ -49,23 +66,28 @@ class BasketViewController: UITableViewController, BasketButtonListening {
         if (cellsDada.isEmpty) {
             view = basketView
         } else {
-            view = tableView
+            view = UIView(frame: view.frame)
+            view.addSubview(tableView)
         }
+        setNavigationBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         GlobalVariables.basketCellsData = [ClothesDataModel]()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellsDada.count
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! FavouritesTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+                as! FavouritesTableViewCell? else {
+            return UITableViewCell()
+        }
         
-        cell.update(dataModel: cellsDada[indexPath.row])
+        cell.update(dataModel: cellsDada[indexPath.row], false)
 
         return cell
     }

@@ -33,7 +33,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     // MARK: - Load view
     
     override func loadView() {
+        
         super.loadView()
+       //setNavigationBar()
     }
 
     override func viewDidLoad() {
@@ -42,11 +44,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         view.backgroundColor = .white
         
         view.addSubview(scrollView)
+
         scrollView.addSubview(contentView)
-        
+       
         view.addSubview(searchBar)
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
             searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
             searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10)
         ])

@@ -7,14 +7,34 @@
 
 import UIKit
 
-class FavouritesTableViewController: UITableViewController {
+class FavouritesTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var cellsDada : [ClothesDataModel] = [ClothesDataModel]()
-
+    var _tableView: UITableView!
+    
+    override func loadView() {
+        
+        super.loadView()
+        let scrollViewFrame = CGRect(x: 0, y: 84, width: view.bounds.width, height: view.bounds.height)
+        _tableView = UITableView(frame: scrollViewFrame)
+       //setNavigationBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        setNavigationBar()
+        
+        view.addSubview(_tableView)
+        
+        _tableView.delegate = self
+        _tableView.dataSource = self
+
+        view.backgroundColor = .white
+        _tableView.backgroundColor = .white
+        
+        _tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        
         cellsDada.append(ClothesDataModel(
             imageName: "Taggart",
             price: "1 004 руб.",
@@ -54,7 +74,27 @@ class FavouritesTableViewController: UITableViewController {
             price: "1 146 руб.",
             description: "Футболка архитектурная"
         ))
+        
     
+    }
+    
+    func setConstraints() {
+        
+        _tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        _tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        _tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        _tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    }
+    
+    func setNavigationBar() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 40, width: screenSize.width, height: 0))
+        let navItem = UINavigationItem(title: "ИЗБРАННОЕ")
+        navBar.backgroundColor = .white
+        navBar.tintColor = .white
+        navBar.setItems([navItem], animated: false)
+        
+        self.view.addSubview(navBar)
     }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -67,15 +107,15 @@ class FavouritesTableViewController: UITableViewController {
 
     
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellsDada.count
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! FavouritesTableViewCell
         
-        cell.update(dataModel: cellsDada[indexPath.row])
+        cell.update(dataModel: cellsDada[indexPath.row], true)
 
         return cell
     }

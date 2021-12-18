@@ -60,7 +60,7 @@ class TabBarController: UITabBarController {
         return controller
     }
     
-    private func favouritesViewController() -> UITableViewController {
+    private func favouritesViewController() -> UIViewController {
         let controller = FavouritesTableViewController()
         controller.tabBarItem.title = "Favourites"
         controller.tabBarItem.image = UIImage(systemName: "heart.fill")
