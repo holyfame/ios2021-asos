@@ -39,7 +39,6 @@ class SearchCollectionViewCell: UICollectionViewCell {
         txtView.numberOfLines = 0
         txtView.lineBreakMode = .byWordWrapping
 
-//        txtView.isEditable = false
         return txtView
     } ()
     
@@ -61,7 +60,6 @@ class SearchCollectionViewCell: UICollectionViewCell {
     }
     
     func update(dataModel: SearchCellDataModel) {
-        //posterImageView.image = UIImage(named: dataModel.imageName)
         self.dataModel = dataModel
         posterImageView.image = UIImage(named: dataModel.imageName)
         priceLabel.text = dataModel.price
@@ -69,12 +67,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     let myConstant: CGFloat = 20
     func setupConstraints() {
-        //self.heightAnchor.constraint(equalToConstant: 500).isActive = true
-        //contentView.heightAnchor.constraint(equalToConstant: 500).isActive = true
-        
-
        [
-//        posterImageView.widthAnchor.constraint(equalToConstant: 200),
         posterImageView.heightAnchor.constraint(equalToConstant: 160),
         posterImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: myConstant*3),
         posterImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
@@ -88,7 +81,6 @@ class SearchCollectionViewCell: UICollectionViewCell {
         descriptionLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: myConstant),
         descriptionLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: myConstant),
         descriptionLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -myConstant),
-        //descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -myConstant).isActive = true
        ].forEach{$0.isActive = true}
         super.updateConstraints()
     }
