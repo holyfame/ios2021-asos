@@ -101,13 +101,14 @@ class BasketView: UIView {
         self.addSubview(searchButton)
         
     }
-    func navigationBar() -> UIView {
-        let screenSize: CGRect = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
-        let navItem = UINavigationItem(title: "ahahhahaha")
-        navBar.setItems([navItem], animated: false)
-        return navBar
-    }
+    
+//    func navigationBar() -> UIView {
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
+//        let navItem = UINavigationItem(title: "ahahhahaha")
+//        navBar.setItems([navItem], animated: false)
+//        return navBar
+//    }
 
     @objc func done() { // remove @objc for Swift 3
 

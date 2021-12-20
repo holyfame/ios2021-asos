@@ -14,10 +14,73 @@
             filePath = "Asos/Favourites/FavouritesTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "init(style:reuseIdentifier:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71631E22-A050-40F1-A961-8B5AF02ECF54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Asos/Favourites/FavouritesTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "FavouritesTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "71631E22-A050-40F1-A961-8B5AF02ECF54 - 5ccc36d3bf676258"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Asos.FavouritesTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Asos.FavouritesTableViewCell"
+                  moduleName = "Asos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/holyfame/Desktop/Study/XcodeProjects/ios2021-asos/Asos/Favourites/FavouritesTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "578">
+               </Location>
+               <Location
+                  uuid = "71631E22-A050-40F1-A961-8B5AF02ECF54 - edca6c139bd12239"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Asos.FavouritesTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Asos.FavouritesTableViewCell&gt;"
+                  moduleName = "Asos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/holyfame/Desktop/Study/XcodeProjects/ios2021-asos/Asos/Favourites/FavouritesTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "71631E22-A050-40F1-A961-8B5AF02ECF54 - 8efa817d999885ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Asos.FavouritesTableViewCell.myConstant.getter : CoreGraphics.CGFloat"
+                  moduleName = "Asos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/holyfame/Desktop/Study/XcodeProjects/ios2021-asos/Asos/Favourites/FavouritesTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

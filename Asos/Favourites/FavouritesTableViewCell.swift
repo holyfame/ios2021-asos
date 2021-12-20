@@ -11,7 +11,9 @@ import UIKit
 class FavouritesTableViewCell: UITableViewCell {
     
     private var dataModel = ClothesDataModel(imageName: "", price: "", description: "")
+    
     private var isBuyable: Bool = true
+    
     private let posterImageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
@@ -85,31 +87,31 @@ class FavouritesTableViewCell: UITableViewCell {
         buyButton.isHidden = !canBuy
     }
     
-    let myCumstant: CGFloat = 20
+    let myConstant: CGFloat = 20
     func setupConstraints() {
         //self.heightAnchor.constraint(equalToConstant: 200).isActive = true
         contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         posterImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         posterImageView.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        posterImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: myCumstant).isActive = true
-        posterImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: myCumstant).isActive = true
+        posterImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: myConstant).isActive = true
+        posterImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: myConstant).isActive = true
 //        posterImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myConstant).isActive = true
         //posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: myConstant0).isActive = true
         
-        priceLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: myCumstant).isActive = true
-        priceLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myCumstant).isActive = true
+        priceLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: myConstant).isActive = true
+        priceLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myConstant).isActive = true
         
-        descriptionLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: myCumstant).isActive = true
-        descriptionLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myCumstant).isActive = true
-        descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myCumstant).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: buyButton.topAnchor, constant: -myCumstant).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: myConstant).isActive = true
+        descriptionLabel.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myConstant).isActive = true
+        descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myConstant).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: buyButton.topAnchor, constant: -myConstant).isActive = true
         //descriptionLabel.heightAnchor.constraint(equalToConstant: 3*myConstant).isActive = true
         
         //buyButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: myConstant).isActive = true
-        buyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -myCumstant).isActive = true
-        buyButton.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myCumstant).isActive = true
-        buyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myCumstant).isActive = true
+        buyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -myConstant).isActive = true
+        buyButton.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: myConstant).isActive = true
+        buyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -myConstant).isActive = true
         //buyButton.widthAnchor.constraint(equalToConstant: 12).isActive = true
         //buyButton.heightAnchor.constraint(equalToConstant: 160).isActive = true
        
